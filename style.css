@@ -1,0 +1,193 @@
+* {
+  text-decoration: 0;
+}
+
+body {
+  background-color:  hsl(30, 38%, 92%);
+  font-family: 'Montserrat', sans-serif;
+}
+
+p {
+  margin: 0;
+}
+
+h3 {
+  margin: 0;
+}
+
+/* Removes all default button styles */
+button {
+  all: unset;
+}
+
+/***
+    Beginning of main code ***/
+
+.main-container {
+  background-color: white;
+  width: 600px;
+  height: 28.125rem;
+  border-radius: 0.6rem;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+}
+
+/***
+    Image Container (left side) code ***/
+
+.desktop-image {
+  width: 100%;
+  height: 100%;
+  filter: brightness(80%); /* Lowering the brightness will darken the image :) */
+}
+
+.mobile-image {
+  display: none;
+}
+
+/***
+    Information Container (right side) code ***/
+.info-container {
+  background-color: hsl(0, 0%, 100%);
+  margin: 2rem 1.5rem 0 2rem;
+}
+
+.paragraph-wrapper {
+  color: hsl(228, 12%, 48%);
+  padding-bottom: 1.5rem;
+}
+
+.paragraph-wrapper h3 {
+    font-size: 0.75rem;
+    letter-spacing: 0.3rem;
+    font-weight: 500;
+    margin-bottom: 1.29rem;
+}
+
+.paragraph-wrapper h1 {
+    font-family: 'Fraunces', serif;
+    color: hsl(212, 21%, 14%);
+    font-size: 2rem;
+    line-height: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.paragraph-wrapper p {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.45rem;
+}
+
+.price-wrapper {
+  grid-template-columns: repeat(2, 1fr);
+  display: grid;
+  align-items: center;
+  gap: 1.2rem;
+  padding-bottom: 1.58rem;
+}
+
+.price-wrapper p {
+  text-decoration: line-through;
+  color: hsl(228, 12%, 48%);
+  font-size: .8rem;
+}
+
+.item-price {
+  font-family: 'Fraunces', serif;
+  color: hsl(158, 36%, 37%);
+  font-size: 2rem;
+}
+
+/***
+    Button code ***/
+.btn {
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(158, 36%, 37%);
+  font-size: 14px;
+  font-weight: bold;
+  padding: .90rem 3.99rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.cart-icon {
+  margin-right: 0.6rem;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: hsl(156, 100%, 12%);
+  transition: 0.8s;
+}
+
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  transform: translate(0 , 800px);
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/****
+     Repsonsive layout ****/
+
+@media screen and (max-width: 375px){
+
+  .main-container {
+    background-color: white;
+    width: 21.3125rem;
+    height: 38rem;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 39% 61%;
+  }
+
+  .mobile-image {
+    display: block; /* To make the image appear on the mobile screen after display: none; was set prior.*/
+    width: 100%;
+    height: 100%;
+    filter: brightness(80%);
+  }
+
+  .desktop-image {
+    display: none;    /* Removes desktop-image for mobile */
+  }
+
+  .info-container {
+    margin: 0.8rem 1.5rem 0 1.5rem;
+  }
+
+  .paragraph-wrapper h3 {
+      margin: 0.8rem 0 .8rem 0;
+  }
+
+  .paragraph-wrapper h1 {
+      margin: 0 0 1rem 0;
+  }
+
+  .paragraph-wrapper {
+    padding-bottom: 1rem;
+  }
+
+  .price-wrapper {
+    padding-bottom: 1rem;
+  }
+
+  .btn {
+    box-sizing: border-box; /* Includes margin and padding into an elements width and height value */
+    width: 100%;
+    padding: .90rem 31.4%;
+  }
+
+  .attribution {
+    display: none;
+  }
+
+}
